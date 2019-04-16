@@ -11,10 +11,9 @@ void setup()
 
 void loop()
 {
-  int brightness = 1;
-  float r = (int)random(0, 16 * brightness);
-  float g = (int)random(0, 10 * brightness);
-  float b = (int)random(0, 8 * brightness);
+  float r = (int)random(0, 16);
+  float g = (int)random(0, 10);
+  float b = (int)random(0, 8);
   float total = r + g + b;
   float rn = r/total * 16;
   float gn = g/total * 16;
