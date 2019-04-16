@@ -6,7 +6,8 @@ void setup()
 {
   pinMode(redPin, OUTPUT);
   pinMode(greenPin, OUTPUT);
-  pinMode(bluePin, OUTPUT); 
+  pinMode(bluePin, OUTPUT);
+  Serial.begin(9600); 
 }
 
 void loop()
@@ -15,10 +16,12 @@ void loop()
   float g = (int)random(0, 10);
   float b = (int)random(0, 8);
   float total = r + g + b;
-  float rn = r/total * 16;
-  float gn = g/total * 16;
-  float bn = b/total * 16;
+  float brightness = 12;
+  float rn = r/total * brightness;
+  float gn = g/total * brightness;
+  float bn = b/total * brightness;
   setColour((int)rn, (int)gn, (int)bn);
+  Serial.println(rn+gn+bn); 
   delay(250);
 }
 
